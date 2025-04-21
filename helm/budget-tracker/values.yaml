@@ -27,7 +27,7 @@ resources:
     memory: "128Mi"
 
 configMapData:
-  ASPNETCORE_ENVIRONMENT: "Production"
+  ASPNETCORE_ENVIRONMENT: "DockerDev"
 
 secretName: budget-tracker-secret
 
