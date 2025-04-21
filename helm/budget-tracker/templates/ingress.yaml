@@ -3,21 +3,23 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ include "budget-tracker.fullname" . }}
+  labels:
+    {{- include "budget-tracker.labels" . | nindent 4 }}
 spec:
   ingressClassName: {{ .Values.ingress.ingressClassName }}
   rules:
-    {{- range .Values.ingress.hosts }}
+  {{- range .Values.ingress.hosts }}
     - host: {{ .host }}
       http:
         paths:
-          {{- range .paths }}
+        {{- range .paths }}
           - path: {{ .path }}
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ include "budget-tracker.fullname" $. }}
+                name: {{ include "budget-tracker.fullname" $ }}
                 port:
                   number: {{ $.Values.service.port }}
-          {{- end }}
-    {{- end }}
+        {{- end }}
+  {{- end }}
 {{- end }}
