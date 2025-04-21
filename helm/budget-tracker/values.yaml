@@ -13,7 +13,7 @@ ingress:
   enabled: true
   ingressClassName: traefik
   hosts:
-    - host: internal-budget-tracker.home.coded-by-danil.dev
+    - host: argo-budget-tracker.home.coded-by-danil.dev
       paths:
         - path: /
           pathType: Prefix
