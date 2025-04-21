@@ -18,3 +18,24 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
+          resources:
+            requests:
+              memory: {{ .Values.resources.requests.memory }}
+              cpu: {{ .Values.resources.requests.cpu }}
+            limits:
+              memory: {{ .Values.resources.limits.memory }}
+              cpu: {{ .Values.resources.limits.cpu }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-env
+          env:
+            - name: Defender_App_MongoDBConnectionString
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: Defender_App_MongoDBConnectionString
+            - name: Defender_App_SecretsEncryptionKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: Defender_App_SecretsEncryptionKey
