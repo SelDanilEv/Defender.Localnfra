@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-risk-games-service
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-risk-games
+      paths:
+        - path: /
+          pathType: Prefix
+
