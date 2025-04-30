@@ -1,5 +1,5 @@
 image:
-  repository: defendersd/dev-user-management
+  repository: defendersd/dev-user-management-service
   tag: latest
   pullPolicy: Always
 
