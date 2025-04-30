@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: defendersd/dev-budget-tracker-service
+  repository: defendersd/dev-wallet-service
   tag: latest
   pullPolicy: Always
 
@@ -13,7 +13,7 @@ ingress:
   enabled: true
   ingressClassName: traefik
   hosts:
-    - host: argo-budget-tracker
+    - host: argo-wallet
       paths:
         - path: /
           pathType: Prefix
