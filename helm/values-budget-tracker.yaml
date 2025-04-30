@@ -1,13 +1,7 @@
-replicaCount: 1
-
 image:
   repository: defendersd/dev-budget-tracker-service
   tag: latest
   pullPolicy: Always
-
-service:
-  type: ClusterIP
-  port: 80
 
 ingress:
   enabled: true
@@ -17,17 +11,4 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
-
-resources:
-  requests:
-    cpu: "25m"
-    memory: "64Mi"
-  limits:
-    cpu: "50m"
-    memory: "128Mi"
-
-configMapData:
-  ASPNETCORE_ENVIRONMENT: "DockerDev"
-
-secretName: basic-secret
 
