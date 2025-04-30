@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-notification-service
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-notification
+      paths:
+        - path: /
+          pathType: Prefix
+

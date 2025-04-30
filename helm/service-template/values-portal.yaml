@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-portal
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-portal
+      paths:
+        - path: /
+          pathType: Prefix
+

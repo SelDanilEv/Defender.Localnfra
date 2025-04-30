@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-identity-service
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-identity
+      paths:
+        - path: /
+          pathType: Prefix
+

@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-user-management
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-user-management
+      paths:
+        - path: /
+          pathType: Prefix
+
