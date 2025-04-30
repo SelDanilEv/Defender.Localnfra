@@ -1,0 +1,14 @@
+image:
+  repository: defendersd/dev-job-scheduler-service
+  tag: latest
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - host: argo-job-scheduler
+      paths:
+        - path: /
+          pathType: Prefix
+
