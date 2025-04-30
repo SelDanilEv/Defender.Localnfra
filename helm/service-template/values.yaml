@@ -1,22 +1,20 @@
 replicaCount: 1
 
-# image:
-#   repository: defendersd/dev-budget-tracker-service
-#   tag: latest
-#   pullPolicy: Always
+image:
+  tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP
   port: 80
 
-# ingress:
-#   enabled: true
-#   ingressClassName: traefik
-#   hosts:
-#     - host: argo-budget-tracker
-#       paths:
-#         - path: /
-#           pathType: Prefix
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - paths:
+        - path: /
+          pathType: Prefix
 
 resources:
   requests:

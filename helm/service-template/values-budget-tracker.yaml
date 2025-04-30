@@ -1,14 +1,7 @@
 image:
   repository: defendersd/dev-budget-tracker-service
-  tag: latest
-  pullPolicy: Always
 
 ingress:
-  enabled: true
-  ingressClassName: traefik
   hosts:
     - host: argo-budget-tracker
-      paths:
-        - path: /
-          pathType: Prefix
 
