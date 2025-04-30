@@ -1,20 +1,8 @@
 replicaCount: 1
 
-image:
-  tag: latest
-  pullPolicy: Always
-
 service:
   type: ClusterIP
   port: 80
-
-ingress:
-  enabled: true
-  ingressClassName: traefik
-  hosts:
-    - paths:
-        - path: /
-          pathType: Prefix
 
 resources:
   requests:

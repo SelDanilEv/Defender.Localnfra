@@ -1,7 +1,14 @@
 image:
   repository: defendersd/dev-wallet-service
+  tag: latest
+  pullPolicy: Always
 
 ingress:
+  enabled: true
+  ingressClassName: traefik
   hosts:
     - host: argo-wallet
+      paths:
+        - path: /
+          pathType: Prefix
 
