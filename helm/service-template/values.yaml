@@ -6,11 +6,11 @@ service:
 
 resources:
   requests:
-    cpu: "25m"
-    memory: "64Mi"
-  limits:
     cpu: "50m"
     memory: "128Mi"
+  limits:
+    cpu: "150m"
+    memory: "512Mi"
 
 configMapData:
   ASPNETCORE_ENVIRONMENT: "DockerDev"
